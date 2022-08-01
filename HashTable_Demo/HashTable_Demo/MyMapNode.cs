@@ -9,6 +9,7 @@ namespace HashTable_Demo
     public class MyMapNode<K, V>
     {
         private readonly int size;
+        //passing the key value pair to the linked list
         private readonly LinkedList<KeyValue<K, V>>[] iteams;
 
         // constructor to initialize
@@ -18,11 +19,16 @@ namespace HashTable_Demo
             this.size = size;
             this.iteams = new LinkedList<KeyValue<K, V>>[size];
         }
+
+        // method to find the postion of the hash(creating hash code)
+
         protected int getArrayPosition(K key)
         {
             int position = key.GetHashCode() % size;
             return Math.Abs(position);
         }
+
+        // method to get a value stored in particular key
 
         public V Get(K key)
         {
@@ -70,7 +76,8 @@ namespace HashTable_Demo
 
 
         }
-      
+        //method getlinkedlist, has  a return type linkist as a key value pair
+        //parameter is position it will be an index
         protected LinkedList<KeyValue<K, V>> GetLinkedList(int position)
         {
             LinkedList<KeyValue<K, V>> linkedList = iteams[position];
