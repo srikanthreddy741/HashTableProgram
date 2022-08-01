@@ -9,8 +9,9 @@ namespace HashTable_demo
     {
         static void Main(string[] args)
         {
+
             MyMapNode<string, string> hash = new MyMapNode<string, string>(18);
-            //“Paranoids are not paranoid because they are paranoid but because they keep putting themselves deliberately into paranoid avoidable situations”
+    
             hash.Add("0", "Paranoids");
             hash.Add("1", "are");
             hash.Add("2", "not");
@@ -30,6 +31,8 @@ namespace HashTable_demo
             hash.Add("16", "paranoid");
             hash.Add("17", "avoidable");
             hash.Add("18", "situations");
+
+            hash.Remove("17");
 
             string hash0 = hash.Get("0");
             Console.WriteLine("0th index value:" + hash0);
@@ -69,7 +72,6 @@ namespace HashTable_demo
             Console.WriteLine("17th index value:" + hash17);
             string hash18 = hash.Get("18");
             Console.WriteLine("18th index value:" + hash18);
-
         }
     }
 }
